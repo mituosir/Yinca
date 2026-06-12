@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://ivyy.lol/rob/rob-script"))()
+loadstring(game:HttpGet("https://ivyy.lol/rob/rob-script-tuo"))()
