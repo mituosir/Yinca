@@ -1,1 +1,57 @@
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ErrorNotice"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
 
+local MainFrame = Instance.new("Frame")
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+MainFrame.BackgroundTransparency = 0.1
+MainFrame.BorderColor3 = Color3.fromRGB(255, 0, 0)
+MainFrame.BorderSizePixel = 2
+MainFrame.Size = UDim2.new(0, 400, 0, 120)
+MainFrame.Position = UDim2.new(0.5, -200, 0.5, -60)
+MainFrame.Active = true
+MainFrame.Draggable = true
+
+local TitleLabel = Instance.new("TextLabel")
+TitleLabel.Name = "TitleLabel"
+TitleLabel.Parent = MainFrame
+TitleLabel.BackgroundTransparency = 1
+TitleLabel.Size = UDim2.new(1, 0, 0, 30)
+TitleLabel.Position = UDim2.new(0, 0, 0, 10)
+TitleLabel.Font = Enum.Font.SourceSansBold
+TitleLabel.Text = "脚本维护公告"
+TitleLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+TitleLabel.TextSize = 22
+TitleLabel.TextXAlignment = Enum.TextXAlignment.Center
+
+local ContentLabel = Instance.new("TextLabel")
+ContentLabel.Name = "ContentLabel"
+ContentLabel.Parent = MainFrame
+ContentLabel.BackgroundTransparency = 1
+ContentLabel.Size = UDim2.new(1, -20, 0, 30)
+ContentLabel.Position = UDim2.new(0, 10, 0, 45)
+ContentLabel.Font = Enum.Font.SourceSans
+ContentLabel.Text = "你脚本出现泄露问题，因此正在维护，预计今日23:00点开放，非常抱歉"
+ContentLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+ContentLabel.TextSize = 16
+ContentLabel.TextXAlignment = Enum.TextXAlignment.Center
+ContentLabel.TextWrapped = false
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Name = "CloseButton"
+CloseButton.Parent = MainFrame
+CloseButton.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+CloseButton.Size = UDim2.new(0, 80, 0, 30)
+CloseButton.Position = UDim2.new(0.5, -40, 0, 80)
+CloseButton.Font = Enum.Font.SourceSansBold
+CloseButton.Text = "关闭"
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.TextSize = 16
+
+CloseButton.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+end)
